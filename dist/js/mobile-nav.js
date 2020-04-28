@@ -28,6 +28,7 @@
       that.navTogglers = options.navTogglers;
       that.linkTogglers = options.linkTogglers;
       that.bodyClose = options.bodyClose || false;
+      that.preventParentClick = options.preventParentClick || false;
 
       that.nav.classList.add('mobile-nav');
       that.navTogglers.forEach(function(navToggler) {
@@ -36,6 +37,7 @@
 
       that.navEvents();
       that.linkEvents();
+      that.initPreventParentClick();
     }
 
     navEvents() {
@@ -98,6 +100,23 @@
               this.previousElementSibling.classList.add('active');
               this.nextElementSibling.classList.add('active');
             }
+          })
+        })
+      }
+    }
+
+    initPreventParentClick() {
+
+      let that = this;
+
+      let mobileSubmenus = document.querySelectorAll('.mobile-nav > li > ul');
+
+      if(that.preventParentClick && mobileSubmenus) {
+        mobileSubmenus.forEach(function(mobileSubmenu) {
+          let submenuToggler = mobileSubmenu.previousElementSibling.previousElementSibling;
+
+          submenuToggler.addEventListener('click', function (e) {
+            e.preventDefault()
           })
         })
       }

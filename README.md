@@ -72,6 +72,7 @@ Or use import/require in your Javascript file:
               document.getElementById('mobile-toggler')
           ],
           linkTogglers: document.querySelectorAll('.link-toggler'),
-          bodyClose: true
+          bodyClose: true,
+          preventParentClick: false
         })
       })
