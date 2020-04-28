@@ -22,40 +22,30 @@
         throw new Error('Specify navigation links toggle selectors')
       }
 
-      let defaults = {
-        bodyClose: true
-      };
-
       let that = this;
 
       that.nav = options.nav;
       that.navTogglers = options.navTogglers;
       that.linkTogglers = options.linkTogglers;
+      that.bodyClose = options.bodyClose || false;
 
       that.nav.classList.add('mobile-nav');
       that.navTogglers.forEach(function(navToggler) {
         navToggler.classList.add('mobile-toggler');
       });
 
-      that.mergeOptions(defaults, options);
       that.navEvents();
       that.linkEvents();
-    }
-
-    mergeOptions(defaults, options) {
-
-      let that = this;
-
-      that.options = {...defaults, ...that.options}
     }
 
     navEvents() {
 
       let that = this;
 
-      if(that.options.bodyClose) {
+      if(that.bodyClose) {
 
         document.body.addEventListener('click', function (event) {
+          console.log(that.bodyClose)
 
           if (!event.target.closest('.mobile-nav')) {
             that.nav.classList.remove('active');
@@ -95,6 +85,7 @@
       let that = this;
 
       if(that.linkTogglers) {
+
         that.linkTogglers.forEach(function(linkToggler) {
           linkToggler.addEventListener('click', function() {
             if(this.classList.contains('active')) {
