@@ -18,9 +18,6 @@
       if(!options.navTogglers) {
         throw new Error('Specify navigation toggle selectors')
       }
-      if(!options.linkTogglers) {
-        throw new Error('Specify navigation links toggle selectors')
-      }
 
       let that = this;
 
