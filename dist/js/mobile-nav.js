@@ -44,7 +44,6 @@
       if(that.bodyClose) {
 
         document.body.addEventListener('click', function (event) {
-          console.log(that.bodyClose)
 
           if (!event.target.closest('.mobile-nav')) {
             that.nav.classList.remove('active');
