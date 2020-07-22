@@ -105,13 +105,11 @@
 
       let that = this;
 
-      let mobileSubmenus = document.querySelectorAll('.mobile-nav > li > ul');
+      if(that.linkTogglers) {
+        that.linkTogglers.forEach(function(linkToggler) {
+          let parentLink = linkToggler.previousElementSibling;
 
-      if(that.preventParentClick && mobileSubmenus) {
-        mobileSubmenus.forEach(function(mobileSubmenu) {
-          let submenuToggler = mobileSubmenu.previousElementSibling.previousElementSibling;
-
-          submenuToggler.addEventListener('click', function (e) {
+          parentLink.addEventListener('click', function (e) {
             e.preventDefault()
           })
         })
