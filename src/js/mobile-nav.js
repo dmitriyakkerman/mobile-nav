@@ -109,9 +109,11 @@
         that.linkTogglers.forEach(function(linkToggler) {
           let parentLink = linkToggler.previousElementSibling;
 
-          parentLink.addEventListener('click', function (e) {
-            e.preventDefault()
-          })
+         if(that.options.preventParentClick) {
+           parentLink.addEventListener('click', function (e) {
+             e.preventDefault()
+           })
+         }
         })
       }
     }
