@@ -23,18 +23,24 @@
 
       that.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
       that.navTogglers = options.navTogglers;
-      that.linkTogglers = options.linkTogglers;
+       that.linkTogglers = options.linkTogglers;
       that.bodyClose = options.bodyClose || false;
       that.preventParentClick = options.preventParentClick || false;
+
+      that.addClassesOnInit();
+      that.navEvents();
+      that.linkEvents();
+      that.initPreventParentClick();
+    }
+
+    addClassesOnInit() {
+
+      let that = this;
 
       that.nav.classList.add('mobile-nav');
       that.navTogglers.forEach(function(navToggler) {
         navToggler.classList.add('mobile-toggler');
       });
-
-      that.navEvents();
-      that.linkEvents();
-      that.initPreventParentClick();
     }
 
     navEvents() {
