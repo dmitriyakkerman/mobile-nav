@@ -38,11 +38,14 @@
     }
 
     navEvents() {
-      this.bodyClose();
-      this.navTogglerEvents();
+
+      let that = this;
+
+      that.navBodyClose();
+      that.navTogglerEvents();
     }
 
-    bodyClose() {
+    navBodyClose() {
 
       let that = this;
 
