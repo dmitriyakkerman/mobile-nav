@@ -67,7 +67,7 @@ Or use import/require in your Javascript file:
  
      document.addEventListener('DOMContentLoaded', function() {
         new MobileNav({
-          nav: document.getElementById('mobile-nav'),
+          nav: '#mobile-nav',
           navTogglers: [
               document.getElementById('mobile-toggler')
           ],
