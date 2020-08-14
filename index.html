@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<ul id="mobile-toggler">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+<ul id="mobile-toggler1">
+  toggler1
+</ul>
+<ul id="mobile-toggler2">
+  toggler2
 </ul>
 
 <ul id="mobile-nav">
@@ -47,15 +47,17 @@
   </li>
 </ul>
 
-<script src="./dist/js/mobile-nav.js"></script>
+<script src="./dist/js/mobile-nav.min.js"></script>
 
 <script>
 
   document.addEventListener('DOMContentLoaded', function() {
+
     new MobileNav({
       nav: document.getElementById('mobile-nav'),
       navTogglers: [
-          document.getElementById('mobile-toggler')
+          document.getElementById('mobile-toggler1'),
+          document.getElementById('mobile-toggler2')
       ],
       linkTogglers: document.querySelectorAll('.link-toggler'),
       bodyClose: true,

@@ -117,6 +117,8 @@
     }
   }
 
+  window.MobileNav = MobileNav;
+
   return MobileNav;
 
 }));

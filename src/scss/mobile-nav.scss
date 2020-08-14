@@ -1,0 +1,41 @@
+.mobile-toggler {
+  position: relative;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  position: fixed;
+  overflow: auto;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    > ul {
+      display: none;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 100%;
+
+      &.active {
+        display: flex;
+      }
+    }
+
+    > a {
+      position: relative;
+
+      &:before {
+        position: absolute;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .mobile-toggler {
+    display: block;
+  }
+}
