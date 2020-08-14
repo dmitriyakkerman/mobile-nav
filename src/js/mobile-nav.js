@@ -38,6 +38,11 @@
     }
 
     navEvents() {
+      this.bodyClose();
+      this.navTogglerEvents();
+    }
+
+    bodyClose() {
 
       let that = this;
 
@@ -54,6 +59,11 @@
 
         });
       }
+    }
+
+    navTogglerEvents() {
+
+      let that = this;
 
       that.navTogglers.forEach(function(navToggler) {
 
