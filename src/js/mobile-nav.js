@@ -21,7 +21,7 @@
 
       let that = this;
 
-      that.nav = options.nav;
+      that.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
       that.navTogglers = options.navTogglers;
       that.linkTogglers = options.linkTogglers;
       that.bodyClose = options.bodyClose || false;

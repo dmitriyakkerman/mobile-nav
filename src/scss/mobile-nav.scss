@@ -23,12 +23,16 @@
         display: flex;
       }
     }
+  }
 
-    > a {
+  a {
+
+    &.parent {
       position: relative;
 
       &:before {
         position: absolute;
+        content: '';
       }
     }
   }
