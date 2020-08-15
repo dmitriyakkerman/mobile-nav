@@ -15,6 +15,7 @@
       if(!options.nav) {
         throw new Error('Specify nav selector')
       }
+
       if(!options.navTogglers) {
         throw new Error('Specify navigation toggle selectors')
       }
@@ -30,7 +31,6 @@
       that.addClassesOnInit();
       that.navEvents();
       that.linkEvents();
-      that.initPreventParentClick();
     }
 
     addClassesOnInit() {
@@ -44,11 +44,13 @@
     }
 
     navEvents() {
+      this.navToggle();
+      this.navBodyClose();
+    }
 
-      let that = this;
-
-      that.navBodyClose();
-      that.navTogglerEvents();
+    linkEvents() {
+      this.linkToggle();
+      this.linkPrevent();
     }
 
     navBodyClose() {
@@ -70,7 +72,7 @@
       }
     }
 
-    navTogglerEvents() {
+    navToggle() {
 
       let that = this;
 
@@ -97,7 +99,7 @@
       });
     }
 
-    linkEvents() {
+    linkToggle() {
 
       let that = this;
 
@@ -118,9 +120,10 @@
           })
         })
       }
+
     }
 
-    initPreventParentClick() {
+    linkPrevent() {
 
       let that = this;
 
