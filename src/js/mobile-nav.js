@@ -20,17 +20,15 @@
         throw new Error('Specify navigation toggle selectors')
       }
 
-      let that = this;
+      this.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
+      this.navTogglers = options.navTogglers;
+      this.linkTogglers = options.linkTogglers;
+      this.bodyClose = options.bodyClose || false;
+      this.preventParentClick = options.preventParentClick || false;
 
-      that.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
-      that.navTogglers = options.navTogglers;
-      that.linkTogglers = options.linkTogglers;
-      that.bodyClose = options.bodyClose || false;
-      that.preventParentClick = options.preventParentClick || false;
-
-      that.addClassesOnInit();
-      that.navEvents();
-      that.linkEvents();
+      this.addClassesOnInit();
+      this.navEvents();
+      this.linkEvents();
     }
 
     addClassesOnInit() {
