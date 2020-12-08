@@ -1,3 +1,7 @@
+**Example**
+
+https://codepen.io/mickyholbrook/pen/OJRXrvd
+
 **Styles:**
   
   Put the required stylesheet link in HEAD tag:
@@ -20,15 +24,10 @@ Or use import/require in your Javascript file:
  
 **Usage**
      
-1. Create typical menu-toggler.
+1. Create typical menu-toggler/burger.
 2. Create mobile navigation component with any nesting and toggle elements. 
       
-         <ul id="mobile-toggler">
-           <div></div>
-           <div></div>
-           <div></div>
-           <div></div>
-         </ul>
+         <div id="mobile-toggler"></div>
          
          <ul id="mobile-nav">
            <li>
@@ -64,15 +63,21 @@ Or use import/require in your Javascript file:
          </ul>
          
 **Initialization**
+
+1. Specify root selector(string or DOM node) in "nav" option. 
+2. Specify one or multiple nav togglers in "navTogglers" option.
+3. Specify link togglers in "linkTogglers" option.
+4. Specify if navigation should close after "click event" on any of links("false" by default).
+5. Specify "preventParentClick" option for preventing click event on parent links which have child elements("false" by default).
  
-     document.addEventListener('DOMContentLoaded', function() {
-        new MobileNav({
-          nav: '#mobile-nav',
-          navTogglers: [
-              document.getElementById('mobile-toggler')
-          ],
-          linkTogglers: document.querySelectorAll('.link-toggler'),
-          bodyClose: true,
-          preventParentClick: false
-        })
-      })
+         document.addEventListener('DOMContentLoaded', function() {
+            new MobileNav({
+              nav: '#mobile-nav',
+              navTogglers: [
+                  document.getElementById('mobile-toggler')
+              ],
+              linkTogglers: document.querySelectorAll('.link-toggler'),
+              bodyClose: true,
+              preventParentClick: false
+            })
+          })

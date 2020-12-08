@@ -1,11 +1,12 @@
-.mobile-toggler {
-  position: relative;
-  cursor: pointer;
-}
-
 .mobile-nav {
   position: fixed;
   overflow: auto;
+  padding: 0;
+  margin: 0;
+
+  &.active {
+    display: block;
+  }
 
   li {
     display: flex;
@@ -18,12 +19,23 @@
       flex-wrap: wrap;
       flex-direction: column;
       width: 100%;
+      padding: 0;
 
       &.active {
         display: flex;
       }
     }
   }
+
+  a + * {
+    cursor: pointer;
+  }
+}
+
+.mobile-toggler {
+  position: relative;
+  display: none;
+  cursor: pointer;
 }
 
 @media (max-width: 991px) {

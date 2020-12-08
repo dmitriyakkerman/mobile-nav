@@ -9,7 +9,6 @@
 }(typeof self !== 'undefined' ? self : this, function () {
 
   class MobileNav {
-
     constructor(options = {}) {
 
       if(!options.nav) {
@@ -32,7 +31,6 @@
     }
 
     addClassesOnInit() {
-
       let that = this;
 
       that.nav.classList.add('mobile-nav');
@@ -52,7 +50,6 @@
     }
 
     navBodyClose() {
-
       let that = this;
 
       if(that.bodyClose) {
@@ -71,7 +68,6 @@
     }
 
     navToggle() {
-
       let that = this;
 
       that.navTogglers.forEach(function(navToggler) {
@@ -98,7 +94,6 @@
     }
 
     linkToggle() {
-
       let that = this;
 
       if(that.linkTogglers) {
@@ -118,11 +113,9 @@
           })
         })
       }
-
     }
 
     linkPrevent() {
-
       let that = this;
 
       if(that.linkTogglers) {
