@@ -20,8 +20,8 @@
       }
 
       this.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
-      this.navTogglers = options.navTogglers;
-      this.linkTogglers = options.linkTogglers;
+      this.navTogglers = typeof options.navTogglers === 'string' ? document.querySelectorAll(options.navTogglers) : options.navTogglers;
+      this.linkTogglers = typeof options.linkTogglers === 'string' ? document.querySelectorAll(options.linkTogglers) : options.linkTogglers;
       this.bodyClose = options.bodyClose || false;
       this.preventParentClick = options.preventParentClick || false;
 

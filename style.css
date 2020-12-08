@@ -1,0 +1,10 @@
+.mobile-nav {
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: #fff;
+    transition: transform .7s ease;
+}
+.mobile-nav.active {
+     transform: translateX(0);
+}

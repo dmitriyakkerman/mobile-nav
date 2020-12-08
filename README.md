@@ -73,11 +73,9 @@ Or use import/require in your Javascript file:
          document.addEventListener('DOMContentLoaded', function() {
             new MobileNav({
               nav: '#mobile-nav',
-              navTogglers: [
-                  document.getElementById('mobile-toggler')
-              ],
-              linkTogglers: document.querySelectorAll('.link-toggler'),
+              navTogglers: '.mobile-toggler',
+              linkTogglers: '.link-toggler',
               bodyClose: true,
-              preventParentClick: false
+              preventParentClick: true
             })
           })
