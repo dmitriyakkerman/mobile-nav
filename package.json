@@ -1,0 +1,39 @@
+{
+  "name": "mobile-nav",
+  "version": "1.0.0",
+  "description": "Simple JS mobile navigation module for your website, which gives you possibility to get rid of routine.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitriyakkerman/mobile-nav-js.git"
+  },
+  "author": "Dmitriy Akkerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitriyakkerman/mobile-nav-js/issues"
+  },
+  "homepage": "https://github.com/dmitriyakkerman/mobile-nav-js#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "path": "^0.12.7",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "keywords": [
+    "webpack",
+    "gulp",
+    "js",
+    "navbar",
+    "navigation-module",
+    "mobile-nav",
+    "mobile-navigation"
+  ]
+}

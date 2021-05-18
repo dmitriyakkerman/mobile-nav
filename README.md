@@ -12,24 +12,16 @@ https://codepen.io/mickyholbrook/pen/OJRXrvd
     
 Put the script at the bottom of your markup: 
 
-    <script src="./dist/js/mobile-nav.js"></script>    
-   
-Or use import/require in your Javascript file:
-    
-    const MobileNav = require('./dist/js/mobile-nav.js');
-    
-    or
-    
-    import MobileNav from './dist/js/mobile-nav.js';
+    <script src="./dist/js/mobile-nav.min.js"></script>      
  
 **Usage**
      
 1. Create typical menu-toggler/burger.
 2. Create mobile navigation component with any nesting and toggle elements. 
       
-         <div id="mobile-toggler"></div>
+         <div class="mobile-toggler"></div>
          
-         <ul id="mobile-nav">
+         <ul class="mobile-nav">
            <li>
              <a href="">1</a>
              <span class="link-toggler"></span>
@@ -72,7 +64,7 @@ Or use import/require in your Javascript file:
  
          document.addEventListener('DOMContentLoaded', function() {
             new MobileNav({
-              nav: '#mobile-nav',
+              nav: '.mobile-nav',
               navTogglers: '.mobile-toggler',
               linkTogglers: '.link-toggler',
               bodyClose: true,
