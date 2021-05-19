@@ -76,7 +76,7 @@ https://codepen.io/mickyholbrook/pen/OJRXrvd
             new MobileNav({
                 nav: '.mobile-nav',
                 navTogglers: {
-                  el: '.mobile-toggler', //or '.toggler1, .toggler2' if you have several different togglers
+                  el: '.mobile-toggler', //or '.toggler1, .toggler2' if you have different togglers
                   responsive: 991
                 },
                 linkTogglers: '.link-toggler',
