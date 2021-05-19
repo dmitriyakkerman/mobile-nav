@@ -15,22 +15,31 @@
         throw new Error('Specify nav selector')
       }
 
-      if(!options.navTogglers) {
-        throw new Error('Specify navigation toggle selectors')
+      if(!options.navTogglers.el) {
+        throw new Error('Specify "el" option inside "navTogglers"')
+      }
+
+      if(!options.navTogglers.responsive) {
+        throw new Error('Specify "responsive" option inside "navTogglers"')
+      }
+
+      if(!options.linkTogglers) {
+        throw new Error('Specify "linkTogglers" selector')
       }
 
       this.nav = typeof options.nav === 'string' ? document.querySelector(options.nav) : options.nav;
-      this.navTogglers = typeof options.navTogglers === 'string' ? document.querySelectorAll(options.navTogglers) : options.navTogglers;
+      this.navTogglers = typeof options.navTogglers.el === 'string' ? document.querySelectorAll(options.navTogglers.el) : options.navTogglers.el;
+      this.responsive = options.navTogglers.responsive;
       this.linkTogglers = typeof options.linkTogglers === 'string' ? document.querySelectorAll(options.linkTogglers) : options.linkTogglers;
       this.bodyClose = options.bodyClose || false;
       this.preventParentClick = options.preventParentClick || false;
 
-      this.addClassesOnInit();
+      this.initClasses();
       this.navEvents();
       this.linkEvents();
     }
 
-    addClassesOnInit() {
+    initClasses() {
       let that = this;
 
       that.nav.classList.add('mobile-nav');
@@ -40,38 +49,40 @@
     }
 
     navEvents() {
-      this.navToggle();
+      this.navToggleEvents();
       this.navBodyClose();
     }
 
     linkEvents() {
-      this.linkToggle();
-      this.linkPrevent();
+      this.linkToggleEvents();
+      this.parentLinkPrevent();
     }
 
     navBodyClose() {
       let that = this;
 
       if(that.bodyClose) {
-
         document.body.addEventListener('click', function (event) {
-
           if (!event.target.closest('.mobile-nav')) {
             that.nav.classList.remove('active');
             that.navTogglers.forEach(function(navToggler) {
               navToggler.classList.remove('active');
             });
           }
-
         });
       }
     }
 
-    navToggle() {
+    navToggleEvents() {
       let that = this;
 
-      that.navTogglers.forEach(function(navToggler) {
+      if(window.innerWidth <= that.responsive) {
+        that.navTogglers.forEach(function (navToggler) {
+          navToggler.style.display = 'block';
+        });
+      }
 
+      that.navTogglers.forEach(function(navToggler) {
         navToggler.addEventListener('click', function (event) {
           event.preventDefault();
           event.stopImmediatePropagation();
@@ -89,15 +100,13 @@
             });
           }
         });
-
       });
     }
 
-    linkToggle() {
+    linkToggleEvents() {
       let that = this;
 
       if(that.linkTogglers) {
-
         that.linkTogglers.forEach(function(linkToggler) {
           linkToggler.addEventListener('click', function() {
             if(this.classList.contains('active')) {
@@ -110,24 +119,24 @@
               this.previousElementSibling.classList.add('active');
               this.nextElementSibling.classList.add('active');
             }
-          })
-        })
+          });
+        });
       }
     }
 
-    linkPrevent() {
+    parentLinkPrevent() {
       let that = this;
 
       if(that.linkTogglers) {
         that.linkTogglers.forEach(function(linkToggler) {
           let parentLink = linkToggler.previousElementSibling;
 
-         if(that.preventParentClick) {
-           parentLink.addEventListener('click', function (e) {
-             e.preventDefault()
-           })
-         }
-        })
+          if(that.preventParentClick) {
+            parentLink.addEventListener('click', function (e) {
+              e.preventDefault()
+            });
+          }
+        });
       }
     }
   }

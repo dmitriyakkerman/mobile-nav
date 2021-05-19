@@ -1,8 +1,5 @@
 .mobile-nav {
-  position: fixed;
   overflow: auto;
-  padding: 0;
-  margin: 0;
 
   &.active {
     display: block;
@@ -19,7 +16,6 @@
       flex-wrap: wrap;
       flex-direction: column;
       width: 100%;
-      padding: 0;
 
       &.active {
         display: flex;
@@ -33,13 +29,6 @@
 }
 
 .mobile-toggler {
-  position: relative;
   display: none;
   cursor: pointer;
-}
-
-@media(max-width: 991px) {
-  .mobile-toggler {
-    display: block;
-  }
 }
