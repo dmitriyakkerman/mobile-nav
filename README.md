@@ -64,16 +64,16 @@ Put the script at the bottom of your markup:
 **Initialization**
 
 1. Specify root selector(string or DOM node) in "nav" option. 
-2. Specify one or multiple nav togglers in "navTogglers" option.
-3. Specify link togglers in "linkTogglers" option.
-4. Specify if navigation should close after "click event" on any of links("false" by default).
-5. Specify "preventParentClick" option for preventing click event on parent links which have child elements("false" by default).
+2. Specify "navTogglers" option: one or multiple nav togglers selectors inside "el" option and media breakpoint of when your nav togglers are going to be visible.
+3. Specify link togglers selector in "linkTogglers" option.
+4. Specify "bodyClose" option if navigation should be closed after "click" out if it("false" by default).
+5. Specify "preventParentClick" option for preventing "click" event on parent links which have child elements("false" by default).
  
         document.addEventListener('DOMContentLoaded', function() {
             new MobileNav({
                 nav: '.mobile-nav',
                 navTogglers: {
-                  el: '.mobile-toggler',
+                  el: '.mobile-toggler', //or '.toggler1, .toggler2'
                   responsive: 767
                 },
                 linkTogglers: '.link-toggler',
