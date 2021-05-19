@@ -4,15 +4,17 @@ Simple JS mobile navigation module for your website, which gives you possibility
 
 https://codepen.io/mickyholbrook/pen/OJRXrvd
 
-**Styles:**
+**Installation**
+
+    1. Go to your project directory
+    2. git clone https://github.com/dmitriyakkerman/mobile-nav-js.git .
   
   Put the required stylesheet link in HEAD tag:
   
     <link rel="stylesheet" href="./dist/css/mobile-nav.min.css">
+     
     
-**Javascript**    
-    
-Put the script at the bottom of your markup: 
+  Put the script at the bottom of your markup: 
 
     <script src="./dist/js/mobile-nav.min.js"></script>      
  
