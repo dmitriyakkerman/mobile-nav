@@ -66,7 +66,7 @@ Put the script at the bottom of your markup:
 2. Specify "navTogglers" option: one or multiple nav toggle selectors inside "el" option and media breakpoint of when your nav toggle elements are going to be visible.
 3. Specify link toggle selector in "linkTogglers" option.
 4. Specify "bodyClose" option if navigation should be closed after "click" event fired out navigation root element("false" by default).
-5. Specify "preventParentClick" option for preventing "click" event on parent links which have child elements(sometimes you need to prevent "click" event on all links excepting links of final nesting).
+5. Specify "preventParentClick" option for preventing "click" event on links, which contain children("false" by default).
  
         document.addEventListener('DOMContentLoaded', function() {
             new MobileNav({
