@@ -16,11 +16,10 @@ Put the script at the bottom of your markup:
  
 **Usage**
      
-1. Create typical menu-toggler/burger.
-2. Create mobile navigation component with any nesting and toggle elements. 
+1. Create typical menu-toggler/burger-menu(sometimes you need more than one toggler so you can use several ones if needed).
+2. Create mobile navigation component with nesting and toggle elements. 
       
         <div class="mobile-toggler toggler1">☰</div>
-        <div class="mobile-toggler toggler2">☰</div>
         
         <ul class="mobile-nav" role="navigation">
             <li>
@@ -63,18 +62,18 @@ Put the script at the bottom of your markup:
          
 **Initialization**
 
-1. Specify root selector(string or DOM node) in "nav" option. 
-2. Specify "navTogglers" option: one or multiple nav togglers selectors inside "el" option and media breakpoint of when your nav togglers are going to be visible.
-3. Specify link togglers selector in "linkTogglers" option.
-4. Specify "bodyClose" option if navigation should be closed after "click" out if it("false" by default).
-5. Specify "preventParentClick" option for preventing "click" event on parent links which have child elements("false" by default).
+1. Specify root selector in "nav" option. 
+2. Specify "navTogglers" option: one or multiple nav toggle selectors inside "el" option and media breakpoint of when your nav toggle elements are going to be visible.
+3. Specify link toggle selector in "linkTogglers" option.
+4. Specify "bodyClose" option if navigation should be closed after "click" event fired out navigation root element("false" by default).
+5. Specify "preventParentClick" option for preventing "click" event on parent links which have child elements(sometimes you need to prevent "click" event on all links excepting links of final nesting).
  
         document.addEventListener('DOMContentLoaded', function() {
             new MobileNav({
                 nav: '.mobile-nav',
                 navTogglers: {
-                  el: '.mobile-toggler', //or '.toggler1, .toggler2'
-                  responsive: 767
+                  el: '.mobile-toggler', //or '.toggler1, .toggler2' if you have several different togglers
+                  responsive: 991
                 },
                 linkTogglers: '.link-toggler',
                 bodyClose: true,
