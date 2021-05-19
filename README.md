@@ -1,3 +1,5 @@
+Simple JS mobile navigation module for your website, which gives you possibility to get rid of routine
+
 **Example**
 
 https://codepen.io/mickyholbrook/pen/OJRXrvd
