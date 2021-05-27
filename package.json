@@ -1,6 +1,6 @@
 {
   "name": "mobile-nav",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple JS mobile navigation module for your website, which gives you possibility to get rid of routine.",
   "main": "index.js",
   "scripts": {
@@ -28,12 +28,10 @@
     "webpack-cli": "^3.3.10"
   },
   "keywords": [
-    "webpack",
-    "gulp",
-    "js",
     "navbar",
     "navigation-module",
     "mobile-nav",
-    "mobile-navigation"
+    "mobile-navigation",
+    "js"
   ]
 }

@@ -6,6 +6,22 @@ https://codepen.io/mickyholbrook/pen/OJRXrvd
 
 **Installation**
 
+**npm**
+
+    npm i mobile-nav-js
+    
+Load the required JS to your entry JS file:
+    
+    let MobileNav = require('mobile-nav-js');   
+    or    
+    import MobileNav from 'mobile-nav-js';
+    
+Load the required stylesheet to your entry CSS file:
+
+    @import "node_modules/mobile-nav-js/index";
+    
+**Cloning git repository**
+
     1. Go to your project directory
     2. git clone https://github.com/dmitriyakkerman/mobile-nav-js.git .
   
@@ -67,7 +83,7 @@ https://codepen.io/mickyholbrook/pen/OJRXrvd
 **Initialization**
 
 1. Specify root selector in "nav" option. 
-2. Specify "navTogglers" option: one or multiple nav toggle selectors inside "el" option and media breakpoint of when your nav toggle elements are going to be visible.
+2. Specify "navTogglers" option: one or multiple nav toggle selectors inside "el" option and media breakpoint of when your nav toggle elements are going to be visible inside "responsive" option.
 3. Specify link toggle selector in "linkTogglers" option.
 4. Specify "bodyClose" option if navigation should be closed after "click" event fired out navigation root element("false" by default).
 5. Specify "preventParentClick" option for preventing "click" event on links, which contain children("false" by default).
