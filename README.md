@@ -29,12 +29,12 @@ Load the required stylesheet to your entry CSS file:
   
   Put the required stylesheet link in HEAD tag:
 ```html  
-    <link rel="stylesheet" href="./dist/css/mobile-nav.min.css">
+<link rel="stylesheet" href="./dist/css/mobile-nav.min.css">
 ```     
     
   Put the script at the bottom of your markup: 
 ```html
-    <script src="./dist/js/mobile-nav.min.js"></script>      
+<script src="./dist/js/mobile-nav.min.js"></script>      
 ``` 
 **Usage**
      
