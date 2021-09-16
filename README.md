@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dmitriyakkerman/mobile-nav-js.svg?branch=master)](https://travis-ci.org/github/dmitriyakkerman/mobile-nav-js)
 
-Simple JS mobile navigation module for your website, which gives you possibility to get rid of routine
+Mobile navigation module for your website, which gives you possibility to get rid of routine
 
 **Example**
 
